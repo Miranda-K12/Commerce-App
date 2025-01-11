@@ -1,0 +1,10 @@
+.starRating {
+  display: flex;
+  gap: 3px;
+}
+
+.starRating svg {
+  cursor: pointer;
+  width: 16px;
+  height: 15px;
+}

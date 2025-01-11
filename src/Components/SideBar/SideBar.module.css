@@ -1,0 +1,36 @@
+.sidebar_categories ul {
+  list-style-type: none;
+  font-family: 'Inter', sans-serif;
+}
+
+.sidebar_categories li {
+  padding: 8px 0 9px 0;
+  color: #505050;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.sidebar_title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #DEE2E7;
+  cursor: pointer;
+  padding: 14px 0;
+}
+
+.sidebar_title h3 {
+  font-size: 16px;
+}
+
+.see_more_button {
+  color: #0D6EFD;
+  background-color: transparent;
+  margin-bottom: 20px;
+  border: none;
+  font-size: 16px;
+  padding: 0;
+  cursor: pointer;
+  margin-top: 9px;
+  text-align: left;
+}

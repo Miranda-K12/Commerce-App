@@ -1,0 +1,84 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  font-family: "Inter", serif;
+  width: 100%;
+}
+
+.footer_container {
+  display: flex;
+  padding: 40px 130px 59px 130px;
+}
+
+.footer_container_company {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  line-height: 24px;
+  width: 276px;
+  margin-right: 61px;
+  color: #505050;
+  gap: 15px;
+}
+
+.Footer_logo {
+  width: 150px;
+  height: 46px;
+}
+
+.social_icons {
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.social_icon:hover {
+  transform: scale(1.05);
+}
+
+.footer_information {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footer_column h3 {
+  font-weight: 500;
+  color: #1C1C1C;
+  margin-bottom: 10px;
+}
+
+.footer_column p {
+  color: #8B96A5;
+  line-height: 24px;
+  margin-bottom: 3px;
+}
+
+.applications {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer_app {
+  cursor: pointer;
+}
+
+.footer_app:hover {
+  transform: scale(1.05);
+}
+
+.footer_box {
+  background-color: #DEE2E7;
+  height: 68px;
+  padding: 0 130px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer_language {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
