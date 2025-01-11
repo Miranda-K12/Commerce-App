@@ -4,6 +4,7 @@ import Watch from './../../assets/Images/watch.png';
 import Headphones from './../../assets/Images/headphones.png';
 import Teapot from './../../assets/Images/teapot.png';
 import Computer from './../../assets/Images/computer.png';
+
 export type RelatedProduct = {
   id: number;
   image: string; 

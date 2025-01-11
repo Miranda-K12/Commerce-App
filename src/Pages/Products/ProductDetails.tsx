@@ -4,7 +4,8 @@ import { useEffect } from 'react';
 import styles from './ProductDetails.module.css';
 import RightArrow from '../../assets/Images/right-arrow.svg';
 import CheckMark from '../../assets/Images/check.svg';
-import RelatedProducts from '../../Components/RelatedProducts/RelatedProducts'
+import RelatedProducts from '../../Components/RelatedProducts/RelatedProducts';
+import  WishList  from '../../Components/Wishlist/Wishlist';
 import StarRating from '../../Components/Rating/Rating';
 import GermanyFlag from '../../assets/Images/germany.svg';
 import Verification from '../../assets/Images/verified_user.svg';
@@ -23,7 +24,6 @@ const ProductDetails = () => {
   if (error) return <div>{error}</div>;
 
   if (!selectedProduct) return <div>No product data available</div>;
-
   return (
     <div className={styles.Product_info}>
        <div className={styles.menu}>
@@ -103,13 +103,19 @@ const ProductDetails = () => {
             </div>
         </div>
       </div>
-      <div className={styles.categories}>
+      <div className={styles.information_box}>
+        <div className={styles.categories}>
         <ul>
           <li>Description</li>
           <li>Reviews</li>
           <li>Shipping</li>
           <li>About company</li>
         </ul>
+        </div>
+        <div className={styles.wishlist_box}>
+          <p>You may like</p>
+           <WishList />
+      </div>
       </div>
       <RelatedProducts />
       <div className={styles.discount_information}>

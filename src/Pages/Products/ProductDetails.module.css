@@ -145,7 +145,6 @@ span {
   flex-direction: column;
 }
 
-
 .company {
   display: flex;
   gap: 11px;
@@ -234,6 +233,11 @@ span {
   border: 1px solid #DEE2E7;
 }
 
+.information_box {
+  display: flex;
+  justify-content: space-between;
+}
+
 .categories {
   border-bottom: 1px solid #DEE2E7;
   padding-top: 16px;
@@ -251,6 +255,15 @@ span {
 
 .categories ul li:first-child {
   color: #0D6EFD;
+}
+
+.wishlist_box {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 22px 36px 16px;
+  color: #1C1C1C;
+  border-radius: 6px;
+  border: 1px solid #DEE2E7;
 }
 
 /*Discount Information Box */
