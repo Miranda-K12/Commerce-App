@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import styles from './Sidebar.module.css';
+import styles from './sideBar.module.css';
 import UpArrow from '../../assets/Images/up-arrow.svg'; 
 import DownArrow from '../../assets/Images/bottom-arrow.svg'; 
 import { category, brands } from './data'; 
