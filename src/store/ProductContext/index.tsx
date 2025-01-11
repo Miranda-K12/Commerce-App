@@ -17,8 +17,8 @@ export const ProductsContextProvider = ({ children }: PropsWithChildren) => {
       const response = await fetch('https://dummyjson.com/products');
       const result = await response.json();
       setData(result.products);
-    } catch (err) {
-      setError('Failed to fetch products');
+    } catch (error) {
+      setError(error instanceof Error ? error.message : 'Failed to fetch products');
     } finally {
       setLoading(false);
     }
@@ -31,8 +31,8 @@ export const ProductsContextProvider = ({ children }: PropsWithChildren) => {
       const response = await fetch(`https://dummyjson.com/products/${id}`);
       const product = await response.json();
       setSelectedProduct(product); 
-    } catch (err) {
-      setError('Failed to fetch product details');
+    } catch (error) {
+      setError(error instanceof Error ? error.message : 'Failed to fetch products');
     } finally {
       setLoading(false);
     }
