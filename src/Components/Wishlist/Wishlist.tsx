@@ -1,6 +1,5 @@
 
-import { wishList } from './WishlistData'; 
-import { WishList} from './WishlistData'; 
+import { wishList, WishList } from './wishlistData';
 import styles from './Wishlist.module.css'; 
 
 const WishListItems = () => {
