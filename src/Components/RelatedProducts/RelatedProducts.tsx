@@ -1,6 +1,5 @@
 
-import { relatedProducts } from './relatedProductsData'; 
-import { RelatedProduct } from './relatedProductsData'; 
+import { relatedProducts, RelatedProduct } from './relatedProductsData'; 
 import styles from './RelatedProducts.module.css'; 
 
 const RelatedProducts = () => {
