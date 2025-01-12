@@ -63,3 +63,21 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+@media (max-width:410px) {
+  .related_products_list {
+    width: 80%;
+    grid-template-columns: 1fr;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+  }
+
+  .product_card {
+    margin-top: 24px;
+  }
+
+  h3 {
+    text-align: center;
+  }
+}

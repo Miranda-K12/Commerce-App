@@ -18,10 +18,14 @@ export type Product = {
   images: string[];
 };
 export type ProductsContextValues = {
-  data: Product[];
-  selectedProduct: Product | null;
-  loading: boolean;
-  error: string;
-  fetchProducts: () => void;
-  fetchProductById: (id: string) => void;
+  data: Product[];           
+  selectedProduct: Product | null; 
+  loading: boolean;        
+  error: string;               
+  fetchProducts: (page: number) => void; 
+  fetchProductById: (id: string) => void; 
+  currentPage: number;      
+  totalItems: number;   
+  itemsPerPage: number;
+  handlePageChange: (page: number) => void;
 };

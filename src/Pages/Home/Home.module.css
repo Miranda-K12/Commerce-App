@@ -116,7 +116,6 @@
   width: 100%;
   height: auto;
   margin-bottom: 23px;
-  border: 1px solid red;
   align-items: center;
 }
 
@@ -193,7 +192,6 @@
   font-size: 20px;
   font-weight: 600;
   margin: 0;
-
 }
 
 .contact_container {
@@ -204,7 +202,8 @@
 }
 
 .contact_input {
-  width: 274px;
+  max-width: 274px;
+  width: 80%;
   padding: 10px 0;
   border: 1px solid #DEE2E7;
   border-radius: 6px;
@@ -246,6 +245,7 @@ button {
     flex-direction: column;
     gap: 16px;
     margin: 16px 0;
+    padding: 12px 0;
   }
 
   .product_container {
@@ -281,5 +281,9 @@ button {
 
   .menu {
     display: none;
+  }
+
+  .contact_input {
+    width: 100%;
   }
 }

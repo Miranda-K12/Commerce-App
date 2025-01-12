@@ -9,21 +9,19 @@ import MenuIcon from '../../assets/Images/navigation.svg';
 import SortingIcon from '../../assets/Images/sort-icon.png';
 import StarRating from '../../Components/Rating/Rating';
 import Sidebar from '../../Components/SideBar/SideBar';
-
+import Pagination from '../../Components/Pagination/Pagination';
 const Home = () => {
   const menu = ['Home', 'Clothings', 'Men’s wear', 'Summer clothing'];
-  const { data, fetchProducts, loading, error } = useProducts();
+  const { data, fetchProducts, loading, error, currentPage, totalItems, handlePageChange } = useProducts();
   const [searchInput, setSearchInput] = useState('');
-
   useEffect(() => {
-    fetchProducts();
-  }, [fetchProducts]);
+    fetchProducts(currentPage);
+  }, [fetchProducts, currentPage]);
   const filteredData = data.filter((product) =>
     product.title.toLowerCase().includes(searchInput.toLowerCase())
   );
   if (loading) return <div>Loading...</div>;
   if (error) return <div>{error}</div>;
-
   return (
     <div>
       <div className={styles.home}>
@@ -70,7 +68,7 @@ const Home = () => {
               />
             </div>
             <div className={styles.product_container}>
-              {filteredData.map((product) => (
+              {filteredData.slice(0, 9).map((product) => (
                 <NavLink to={`/product/${product.id}`} key={product.id} className={styles.product_card}>
                   <div>
                     <img
@@ -92,6 +90,12 @@ const Home = () => {
                 </NavLink>
               ))}
             </div>
+             <Pagination
+              currentPage={currentPage}
+              totalItems={totalItems}
+              itemsPerPage={10}
+              onPageChange={handlePageChange}
+            />
           </div>
         </div>
       </div>
