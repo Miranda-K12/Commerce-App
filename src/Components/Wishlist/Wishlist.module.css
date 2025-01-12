@@ -28,3 +28,25 @@
 .wishlist_text p {
   color: #8B96A5;
 }
+
+@media (max-width:900px) {
+  .wishlist_container_list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 0;
+  }
+
+  .wishlist_card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width:580px) {
+  .wishlist_container_list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    font-size: 14px;
+  }
+}

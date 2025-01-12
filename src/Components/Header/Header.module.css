@@ -4,6 +4,7 @@
   font-family: "Inter", serif;
   font-size: 16px;
   width: 100%;
+  max-width: 1440px;
 }
 
 .header_container {
@@ -15,8 +16,9 @@
 }
 
 .Header_logo {
-  width: 150px;
-  Height: 46px;
+  max-width: 150px;
+  height: auto;
+  width: 100%;
 }
 
 .Header_search {
@@ -30,7 +32,7 @@
 }
 
 .Header_search_input {
-  width: 421px;
+  width: 63%;
   font-size: 16px;
   color: #8B96A5;
   padding: 10px;
@@ -41,7 +43,7 @@
 }
 
 .Header_categories {
-  width: 145px;
+  width: 22%;
   color: #1C1C1C;
   border: none;
   border-left: 1px solid #0D6EFD;
@@ -49,7 +51,7 @@
 }
 
 .Header_button {
-  width: 100px;
+  width: 15%;
   background-color: #0D6EFD;
   color: #ffff;
   font-weight: 500;
@@ -64,7 +66,6 @@
   font-size: 12px;
   color: #8B96A5;
   gap: 15px;
-  width: 228px;
   height: 41px;
   cursor: pointer;
 }
@@ -73,7 +74,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
 .Header_icon_box:hover {
@@ -135,4 +135,45 @@
 
 .Bottom_arrow_menu {
   margin-left: -23px;
+}
+
+@media (max-width:1320px) {
+  .Header_search {
+    width: 500px;
+  }
+}
+
+@media (max-width:1200px) {
+  .features {
+    display: none;
+  }
+
+  .menu_list {
+    margin: 0 auto;
+  }
+
+  .Header_search {
+    display: none;
+  }
+
+  .header_container {
+    justify-content: space-around;
+    padding: 20px;
+  }
+}
+
+@media (max-width:768px) {
+  .header {
+    padding: 10px 24px;
+  }
+
+  .header_box {
+    display: none;
+  }
+}
+
+@media (max-width:480px) {
+  .Header_icons {
+    display: none;
+  }
 }

@@ -34,3 +34,9 @@
   margin-top: 9px;
   text-align: left;
 }
+
+@media (max-width:768px) {
+  .sidebar {
+    display: none;
+  }
+}

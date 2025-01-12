@@ -3,6 +3,8 @@
   font-family: 'Inter', sans-serif;
   background-color: #F7FAFC;
   font-size: 16px;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .menu ul {
@@ -52,10 +54,11 @@
 }
 
 .product_image {
-  width: 380px;
-  height: 380px;
+  max-width: 380px;
+  height: auto;
   margin-bottom: 20px;
   border: 1px solid #DEE2E7;
+  width: 100%;
 }
 
 .product_images_list {
@@ -204,7 +207,6 @@ span {
   margin-top: 23px;
 }
 
-
 .company_info_buttons {
   display: flex;
   flex-direction: column;
@@ -299,7 +301,7 @@ span {
 .button_container {
   background-color: #005ADE;
   position: absolute;
-  width: 400px;
+  width: 40%;
   top: 0;
   bottom: 0;
   right: 0;
@@ -319,4 +321,77 @@ span {
   padding: 10.5px 16px;
   border: none;
   border-radius: 6px;
+}
+
+@media (max-width:1200px) {
+  .Product_info {
+    padding: 0 68px;
+  }
+
+  .product_box {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .product_supply_box {
+    display: none;
+  }
+}
+
+@media (max-width:900px) {
+  .discount_text h3 {
+    font-size: 18px;
+  }
+
+  .information_box {
+    flex-direction: column;
+  }
+}
+
+@media (max-width:768px) {
+  .Product_info {
+    padding: 10px 24px;
+  }
+
+  .product_image_box {
+    flex-direction: column;
+  }
+
+  .product_box {
+    grid-template-columns: 1fr;
+  }
+
+  .discount_information {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .button_container {
+    position: relative;
+    background-color: #127FFF;
+  }
+
+  .button_container {
+    width: 100%;
+    padding-right: 0;
+    clip-path: 0;
+  }
+
+  .button_container button {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .categories {
+    display: none;
+  }
+
+  .menu {
+    display: none;
+  }
+}
+
+@media (max-width:480px) {
+  .discount_information {
+    display: none;
+  }
 }
