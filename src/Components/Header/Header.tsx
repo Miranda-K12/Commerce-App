@@ -7,11 +7,14 @@ import Basket from '../../assets/Images/basket.png'
 import Menu from '../../assets/Images/menu.svg'
 import BottomArrow from '../../assets/Images/bottom-arrow.svg'
 import GermanyFlag from '../../assets/Images/germany.svg';
+import { Link } from 'react-router-dom';
 function Header() {
   return (
     <div className={styles.header}>
     <div className={styles.header_container}>
+      <Link to="/" className={styles.Header_logoLink}>
       <img className={styles.Header_logo} src={Logo} alt="Logo" />
+    </Link>
       <div className={styles.Header_search}>
            <input
         type="text"

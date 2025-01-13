@@ -41,14 +41,12 @@
 }
 
 .search_input {
-  width: 90%;
+  width: 100%;
   padding: 10px;
   border: 1px solid #DEE2E7;
   border-radius: 6px;
-  margin: 0 auto;
   cursor: pointer;
   margin-top: 24px;
-  display: block;
 }
 
 .product_container {
@@ -89,13 +87,14 @@
   margin-right: 16px;
 }
 
-.features {
+.sorting {
   height: 40px;
   max-width: 172px;
   font-size: 16px;
   padding: 11px 16px 10px 11px;
   border-radius: 6px;
   margin-right: 10px;
+  cursor: pointer;
 }
 
 .product_card {
