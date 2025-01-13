@@ -1,7 +1,6 @@
 
 import { relatedProducts, RelatedProduct } from './relatedProductsData'; 
 import styles from './RelatedProducts.module.css'; 
-
 const RelatedProducts = () => {
   return (
     <div className={styles.related_products_container}>
