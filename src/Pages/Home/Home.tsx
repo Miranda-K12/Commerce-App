@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import styles from './Home.module.css';
-import { useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 import useProducts from '../../store/ProductContext';
 import EmailIcon from '../../assets/Images/email.svg';
 import RightArrow from '../../assets/Images/right-arrow.svg';
@@ -10,18 +10,42 @@ import SortingIcon from '../../assets/Images/sort-icon.png';
 import StarRating from '../../Components/Rating/Rating';
 import Sidebar from '../../Components/SideBar/SideBar';
 import Pagination from '../../Components/Pagination/Pagination';
+import { Product } from '../../store/ProductContext/types';
+
 const Home = () => {
   const menu = ['Home', 'Clothings', 'Men’s wear', 'Summer clothing'];
   const { data, fetchProducts, loading, error, currentPage, totalItems, handlePageChange } = useProducts();
   const [searchInput, setSearchInput] = useState('');
-  useEffect(() => {
-    fetchProducts(currentPage);
-  }, [fetchProducts, currentPage]);
+  const [sortCriteria, setSortCriteria] = useState<'' | 'price' | 'rating' | 'title'>('');
+  const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
+
+  const getSortedData = (data: Product[], criteria: 'price' | 'rating' | 'title' | '', order: 'asc' | 'desc'): Product[] => {
+    const sortedData = [...data].sort((a, b) => {
+      if (criteria === 'price') {
+        return a.price - b.price;
+      } else if (criteria === 'rating') {
+        return b.rating - a.rating;
+      } else if (criteria === 'title') {
+        return a.title.localeCompare(b.title);
+      }
+      return 0;
+    });
+    return order === 'desc' ? sortedData.reverse() : sortedData;
+  };
+
   const filteredData = data.filter((product) =>
     product.title.toLowerCase().includes(searchInput.toLowerCase())
   );
+
+  const sortedData = getSortedData(filteredData, sortCriteria, sortOrder);
+
+  useEffect(() => {
+    fetchProducts(currentPage);
+  }, [fetchProducts, currentPage]);
+
   if (loading) return <div>Loading...</div>;
   if (error) return <div>{error}</div>;
+
   return (
     <div>
       <div className={styles.home}>
@@ -43,17 +67,25 @@ const Home = () => {
                 12,911 items in <span className={styles.span_element}>Mobile accessory</span>
               </p>
               <div className={styles.filterSection}>
-                <input
-                  type="checkbox"
-                  className={styles.checkbox}
-                />
+                <input type="checkbox" className={styles.checkbox} />
                 <p>Verified Only</p>
-                <select className={styles.features} name="filter">
-                  <option value="featured">Featured</option>
+                <select
+                  className={styles.sorting}
+                  name="filter"
+                  value={sortCriteria}
+                  onChange={(e) => setSortCriteria(e.target.value as '' | 'price' | 'rating' | 'title')}
+                >
+                  <option value="">Sorting</option>
                   <option value="price">Sort by Price</option>
-                  <option value="name">Sort by Name</option>
+                  <option value="title">Sort by Name</option>
                   <option value="rating">Sort by Rating</option>
                 </select>
+                <button
+                  className={styles.sortOrderButton}
+                  onClick={() => setSortOrder((prevOrder) => (prevOrder === 'asc' ? 'desc' : 'asc'))}
+                >
+                  {sortOrder === 'asc' ? 'Ascending' : 'Descending'}
+                </button>
                 <img className={styles.nav_icon} src={SortingIcon} alt="sort-icon" />
                 <img className={styles.nav_icon} src={MenuIcon} alt="menu-icon" />
               </div>
@@ -68,7 +100,7 @@ const Home = () => {
               />
             </div>
             <div className={styles.product_container}>
-              {filteredData.slice(0, 9).map((product) => (
+              {sortedData.map((product) => (
                 <NavLink to={`/product/${product.id}`} key={product.id} className={styles.product_card}>
                   <div>
                     <img
@@ -90,7 +122,7 @@ const Home = () => {
                 </NavLink>
               ))}
             </div>
-             <Pagination
+            <Pagination
               currentPage={currentPage}
               totalItems={totalItems}
               itemsPerPage={10}
