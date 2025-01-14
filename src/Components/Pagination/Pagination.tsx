@@ -1,4 +1,3 @@
-
 import styles from './Pagination.module.css'; 
 import RightArrow from '../../assets/Images/right-arrow.svg';
 import LeftArrow from '../../assets/Images/left-arrow.svg';

@@ -75,6 +75,7 @@
 .filterSection {
   display: flex;
   align-items: center;
+  gap: 10px;
 }
 
 .filterSection input {
@@ -85,6 +86,12 @@
 
 .filterSection p {
   margin-right: 16px;
+}
+
+.filterSection button {
+  background-color: #0D6EFD;
+  font-size: 16px;
+  padding: 10px;
 }
 
 .sorting {
