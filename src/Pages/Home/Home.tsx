@@ -14,7 +14,7 @@ import { Product } from '../../store/ProductContext/types';
 
 const Home = () => {
   const menu = ['Home', 'Clothings', 'Men’s wear', 'Summer clothing'];
-  const { data, fetchProducts, loading, error, currentPage, totalItems, handlePageChange } = useProducts();
+  const { data, fetchProducts, loading, error, currentPage, totalItems,  handlePageChange } = useProducts();
   const [searchInput, setSearchInput] = useState('');
   const [sortCriteria, setSortCriteria] = useState<'' | 'price' | 'rating' | 'title'>('');
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
@@ -125,7 +125,7 @@ const Home = () => {
             <Pagination
               currentPage={currentPage}
               totalItems={totalItems}
-              itemsPerPage={10}
+              itemsPerPage={9}
               onPageChange={handlePageChange}
             />
           </div>

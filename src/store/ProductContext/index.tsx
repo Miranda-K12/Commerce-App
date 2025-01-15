@@ -6,7 +6,7 @@ import { Product, ProductsContextValues } from "./types";
 const ProductsContext = createContext<ProductsContextValues | null>(null);
 
 export const ProductsContextProvider = ({ children }: PropsWithChildren) => {
-  const itemsPerPage = 10; 
+  const itemsPerPage = 9; 
   const [data, setData] = useState<Product[]>([]);  
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null); 
   const [loading, setLoading] = useState(false);

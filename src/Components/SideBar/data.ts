@@ -3,4 +3,4 @@
      'Chanel', 'Dior', 'Dolce & Gabbana', 'Gucci', 'Annibale Colombo', 'Furniture Co', 'Knoll',
      'Bath Trends'
 ];
-export const category = ["beauty","fragrances","furniture","groceries","home-decoration","kitchen-accessories","laptops","mens-shirts","mens-shoes","mens-watches","mobile-accessories","motorcycle","skin-care","smartphones","sports-accessories","sunglasses","tablets","tops","vehicle","womens-bags","womens-dresses","womens-jewellery","womens-shoes","womens-watches"]
+export const category = ["Beauty","Fragrances","Furniture","Groceries","Home-decoration","Kitchen-accessories","Laptops","Mens-shirts","Mens-shoes","Mens-watches","Mobile-accessories","Motorcycle","Skin-care","Smartphones","Sports-accessories","Sunglasses","Tablets","Tops","Vehicle","Womens-bags","Womens-dresses","Womens-jewellery","Womens-shoes","Womens-watches"]

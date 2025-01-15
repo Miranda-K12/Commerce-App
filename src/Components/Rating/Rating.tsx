@@ -10,7 +10,8 @@ const StarRating = ({ rating }: StarRatingProps) => {
   rating >= 3.5 ? { orangeStars: 4, greyStars: 1 } :
   rating >= 2.5 ? { orangeStars: 3, greyStars: 2 } :
   rating >= 1.5 ? { orangeStars: 2, greyStars: 3 } :
-  rating >= 0.5 ? { orangeStars: 1, greyStars: 4 } : { orangeStars: 0, greyStars: 5 };
+            rating >= 0.5 ? { orangeStars: 1, greyStars: 4 } :
+              { orangeStars: 0, greyStars: 5 };
 
   const renderStars = (count: number, fill: string) => {
     return [...Array(count)].map((_, i) => (

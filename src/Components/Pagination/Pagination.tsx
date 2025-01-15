@@ -26,7 +26,7 @@ const Pagination = ({ currentPage, totalItems, itemsPerPage, onPageChange }: Pag
   };
   return (
     <div className={styles.pagination}>
-<div className={styles.pageBox}>
+      <div className={styles.pageBox}>
         <p>Show {currentPage}</p> 
         <img src={DownArrow} alt='arrow-icon'/>
       </div>

@@ -35,6 +35,17 @@
   text-align: left;
 }
 
+.sidebar_categories ul li {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+input {
+  width: 20px;
+  height: 20px;
+}
+
 @media (max-width:768px) {
   .sidebar {
     display: none;
