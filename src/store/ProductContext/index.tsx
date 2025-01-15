@@ -19,13 +19,13 @@ const fetchProducts = useCallback(async (page: number = currentPage) => {
   setLoading(true);
   setError('');
   const skip = (page - 1) * itemsPerPage;
-  const limit = 10;
+  const limit = 9;
   const url = `https://dummyjson.com/products?limit=${limit}&skip=${skip}`;
 
   try {
-    const response = await axios.get(url); // Use Axios for the request
-    setData(response.data.products); // Axios returns the response data under 'data'
-    setTotalItems(response.data.total); // Access total items count from response
+    const response = await axios.get(url); 
+    setData(response.data.products); 
+    setTotalItems(response.data.total);
   } catch (error) {
     setError(error instanceof Error ? error.message : 'Failed to fetch products');
   } finally {
