@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import styles from './Home.module.css';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import useProducts from '../../store/ProductContext';
 import EmailIcon from '../../assets/Images/email.svg';
 import RightArrow from '../../assets/Images/right-arrow.svg';
@@ -33,11 +33,15 @@ const Home = () => {
     return order === 'desc' ? sortedData.reverse() : sortedData;
   };
 
-  const filteredData = data.filter((product) =>
-    product.title.toLowerCase().includes(searchInput.toLowerCase())
-  );
-
-  const sortedData = getSortedData(filteredData, sortCriteria, sortOrder);
+  const filteredData = useMemo(() => {
+    return data.filter((product) =>
+      product.title.toLowerCase().includes(searchInput.toLowerCase())
+    );
+  }, [data, searchInput]);
+  
+const sortedData = useMemo(() => {
+    return getSortedData(filteredData, sortCriteria, sortOrder);
+  }, [filteredData, sortCriteria, sortOrder]);
 
   useEffect(() => {
     fetchProducts(currentPage);
